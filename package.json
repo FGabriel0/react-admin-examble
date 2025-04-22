@@ -1,0 +1,27 @@
+{
+  "name": "react-admin-example",
+  "version": "1.0.0",
+  "description": "> Example of React Admin. We use JSON-Server for our REST API",
+  "main": "index.js",
+  "scripts": {
+    "server": "node server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "content-range": "^1.1.0",
+    "cors": "^2.8.5",
+    "http-proxy-middleware": "^3.0.5",
+    "json-server": "^0.16.2",
+    "node": "^23.11.0",
+    "ra-data-simple-rest": "^5.7.3",
+    "react": "^19.1.0",
+    "react-admin": "^5.7.3",
+    "react-dom": "^19.1.0",
+    "react-scripts": "^5.0.1"
+  }
+}
