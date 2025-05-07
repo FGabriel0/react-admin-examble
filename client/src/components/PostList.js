@@ -6,17 +6,30 @@ import {
   DateField,
   EditButton,
   DeleteButton,
+  TextInput,
+  ReferenceInput,
+  FunctionField,
+  ReferenceField
 } from 'react-admin'
 
-const PostList = (props) => {
+const postFilters = [
+  <TextInput source='q' label="Search" alwaysOn/>,
+  <ReferenceInput source='userId' label="User" reference='users'/>
+]
+
+const PostList = () => {
   return (
-    <List {...props}>
+    <List filters={postFilters}>
       <Datagrid>
         <TextField source='id' />
         <TextField source='title' />
+        <FunctionField label="Excerpt"
+          render={(record) => `${record.body.substring(0,50)}...`} />
+        <ReferenceField source='userId' reference='users'/>
         <DateField source='publishedAt' />
         <EditButton basePath='/posts' />
         <DeleteButton basePath='/posts' />
+        
       </Datagrid>
     </List>
   )
